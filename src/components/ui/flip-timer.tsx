@@ -9,14 +9,27 @@ interface FlipTimerProps {
 const FlipDigit: React.FC<{ digit: string }> = ({ digit }) => {
   return (
     <div className="relative w-12 h-16 mx-1">
-      <div className="absolute inset-0 bg-gradient-card backdrop-blur-sm rounded-lg shadow-soft border border-white/20">
-        <div className="flex items-center justify-center h-full">
-          <span className="text-2xl font-bold text-foreground font-mono">
+      {/* 3D flip card effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-100 to-slate-200 rounded-lg shadow-lg border-2 border-slate-300/50">
+        {/* Top shadow for depth */}
+        <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-b from-white/40 to-transparent rounded-t-lg" />
+        
+        {/* Main digit display */}
+        <div className="flex items-center justify-center h-full relative">
+          <span className="text-2xl font-bold text-slate-800 font-mono drop-shadow-sm">
             {digit}
           </span>
         </div>
-        {/* Subtle divider line for flip effect */}
-        <div className="absolute left-0 right-0 top-1/2 h-px bg-border/30" />
+        
+        {/* Flip divider line with 3D effect */}
+        <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-gradient-to-r from-slate-400/50 via-slate-500/70 to-slate-400/50 shadow-sm" />
+        
+        {/* Bottom shadow for depth */}
+        <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-t from-slate-400/20 to-transparent rounded-b-lg" />
+        
+        {/* Side highlight for 3D effect */}
+        <div className="absolute left-0 top-1 bottom-1 w-0.5 bg-white/60 rounded-l-lg" />
+        <div className="absolute right-0 top-1 bottom-1 w-0.5 bg-slate-500/30 rounded-r-lg" />
       </div>
     </div>
   );

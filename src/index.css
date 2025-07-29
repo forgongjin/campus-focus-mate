@@ -50,6 +50,12 @@ All colors MUST be HSL.
     --gradient-background: linear-gradient(180deg, hsl(220 30% 97%), hsl(210 25% 95%));
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(220 30% 98% / 0.6));
     
+    /* Blackboard gradient */
+    --gradient-blackboard: linear-gradient(145deg, hsl(120 30% 15%), hsl(140 25% 12%));
+    
+    /* Desk gradient */
+    --gradient-desk: linear-gradient(145deg, hsl(30 40% 85%), hsl(25 35% 80%));
+    
     /* Beautiful shadows with warm glow */
     --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.1);
     --shadow-medium: 0 8px 30px hsl(var(--primary) / 0.15);

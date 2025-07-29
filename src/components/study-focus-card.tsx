@@ -26,27 +26,31 @@ export const StudyFocusCard: React.FC<StudyFocusCardProps> = ({
   return (
     <div 
       className={cn(
-        "relative bg-gradient-card backdrop-blur-md rounded-3xl p-6 shadow-medium border border-white/20 hover:shadow-glow transition-all duration-300",
+        "relative bg-gradient-desk backdrop-blur-sm rounded-2xl p-6 shadow-medium border-2 border-amber-800/20 hover:shadow-glow transition-all duration-300",
         className
       )}
       style={style}
     >
-      {/* Floating decorative elements */}
-      <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent/30 rounded-full animate-float" />
-      <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-primary/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+      {/* Wood grain texture effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-100/20 to-amber-200/10 rounded-2xl" />
+      
+      {/* Desk items decoration */}
+      <div className="absolute top-3 right-4 w-3 h-3 bg-red-400/40 rounded-full shadow-sm" /> {/* 橡皮擦 */}
+      <div className="absolute bottom-3 left-4 w-8 h-1 bg-yellow-600/50 rounded-full shadow-sm" /> {/* 铅笔 */}
+      <div className="absolute top-4 left-6 w-2 h-2 bg-blue-400/30 rounded-full shadow-sm" /> {/* 钉子 */}
       
       {/* Title */}
-      <div className="text-center mb-6">
-        <h3 className="text-xl font-bold text-foreground mb-2 tracking-wide">
+      <div className="text-center mb-6 relative z-10">
+        <h3 className="text-xl font-bold text-amber-900 mb-2 tracking-wide drop-shadow-sm">
           {title}
         </h3>
       </div>
 
-      <div className="flex items-center justify-between gap-6">
+      <div className="flex items-center justify-center gap-6 relative z-10">
         {/* Timer Section */}
         <div className="flex-1">
           <FlipTimer time={time} className="mb-3" />
-          <p className="text-xs text-muted-foreground text-center font-medium">
+          <p className="text-xs text-amber-800/70 text-center font-medium">
             上次{variant === 'study' ? '专注学习' : '专注备考'}时长{lastSessionTime}
           </p>
         </div>
@@ -57,10 +61,10 @@ export const StudyFocusCard: React.FC<StudyFocusCardProps> = ({
             variant={variant === 'study' ? 'focus' : 'study'}
             size="focus"
             onClick={onStart}
-            className="group relative overflow-hidden"
+            className="group relative overflow-hidden shadow-lg"
           >
             <div className="absolute inset-0 bg-white/10 transform -skew-x-12 group-hover:translate-x-full transition-transform duration-700" />
-            <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
+            <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300 fill-current" />
             <span className="relative z-10">{title}</span>
           </Button>
         </div>

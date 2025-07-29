@@ -74,6 +74,8 @@ export default {
 				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-background': 'var(--gradient-background)',
 				'gradient-card': 'var(--gradient-card)',
+				'gradient-blackboard': 'var(--gradient-blackboard)',
+				'gradient-desk': 'var(--gradient-desk)',
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
