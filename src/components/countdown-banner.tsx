@@ -51,7 +51,7 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
           }}>天</span>
         </div>
         
-        {/* Chalk marks */}
+        {/* Chalk marks and eraser marks */}
         <div className="mt-3 flex justify-center space-x-3">
           {[...Array(5)].map((_, i) => (
             <div
@@ -61,6 +61,11 @@ export const CountdownBanner: React.FC<CountdownBannerProps> = ({
             />
           ))}
         </div>
+        
+        {/* Simple chalk traces */}
+        <div className="absolute top-8 left-12 w-8 h-0.5 bg-white/15 rounded-full transform rotate-12" />
+        <div className="absolute bottom-8 right-16 w-6 h-0.5 bg-white/10 rounded-full transform -rotate-6" />
+        <div className="absolute top-16 right-20 w-4 h-0.5 bg-white/12 rounded-full transform rotate-45" />
       </div>
     </div>
   );

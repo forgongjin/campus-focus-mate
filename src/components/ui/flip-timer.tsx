@@ -8,7 +8,7 @@ interface FlipTimerProps {
 
 const FlipDigit: React.FC<{ digit: string }> = ({ digit }) => {
   return (
-    <div className="relative w-12 h-16 mx-1">
+    <div className="relative w-8 h-12 mx-0.5">
       {/* 3D flip card effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-100 to-slate-200 rounded-lg shadow-lg border-2 border-slate-300/50">
         {/* Top shadow for depth */}
@@ -16,7 +16,7 @@ const FlipDigit: React.FC<{ digit: string }> = ({ digit }) => {
         
         {/* Main digit display */}
         <div className="flex items-center justify-center h-full relative">
-          <span className="text-2xl font-bold text-slate-800 font-mono drop-shadow-sm">
+          <span className="text-lg font-bold text-slate-800 font-mono drop-shadow-sm">
             {digit}
           </span>
         </div>
@@ -36,9 +36,9 @@ const FlipDigit: React.FC<{ digit: string }> = ({ digit }) => {
 };
 
 const TimeSeparator: React.FC = () => (
-  <div className="flex flex-col justify-center items-center h-16 mx-2">
-    <div className="w-2 h-2 bg-primary/60 rounded-full mb-1" />
-    <div className="w-2 h-2 bg-primary/60 rounded-full" />
+  <div className="flex flex-col justify-center items-center h-12 mx-1">
+    <div className="w-1.5 h-1.5 bg-primary/60 rounded-full mb-1" />
+    <div className="w-1.5 h-1.5 bg-primary/60 rounded-full" />
   </div>
 );
 

@@ -33,6 +33,21 @@ export const StudyFocusCard: React.FC<StudyFocusCardProps> = ({
     >
       {/* Wood grain texture effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-amber-100/20 to-amber-200/10 rounded-2xl" />
+      <div className="absolute inset-0 opacity-30 rounded-2xl" style={{
+        backgroundImage: `repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 2px,
+          rgba(139, 69, 19, 0.1) 2px,
+          rgba(139, 69, 19, 0.1) 4px
+        ), repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 8px,
+          rgba(160, 82, 45, 0.1) 8px,
+          rgba(160, 82, 45, 0.1) 16px
+        )`
+      }} />
       
       {/* Desk items decoration */}
       <div className="absolute top-3 right-4 w-3 h-3 bg-red-400/40 rounded-full shadow-sm" /> {/* 橡皮擦 */}
@@ -48,15 +63,15 @@ export const StudyFocusCard: React.FC<StudyFocusCardProps> = ({
 
       <div className="flex items-center justify-center gap-6 relative z-10">
         {/* Timer Section */}
-        <div className="flex-1">
-          <FlipTimer time={time} className="mb-3" />
+        <div className="flex-1 flex flex-col items-center">
+          <FlipTimer time={time} className="mb-2" />
           <p className="text-xs text-amber-800/70 text-center font-medium">
             上次{variant === 'study' ? '专注学习' : '专注备考'}时长{lastSessionTime}
           </p>
         </div>
 
         {/* Action Button */}
-        <div className="flex-shrink-0">
+        <div className="flex items-center justify-center">
           <Button
             variant={variant === 'study' ? 'focus' : 'study'}
             size="focus"
