@@ -63,7 +63,7 @@ export const StudyFocusCard: React.FC<StudyFocusCardProps> = ({
 
       <div className="flex items-center justify-center gap-6 relative z-10">
         {/* Timer Section */}
-        <div className="flex-1 flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center">
           <FlipTimer time={time} className="mb-2" />
           <p className="text-xs text-amber-800/70 text-center font-medium">
             上次{variant === 'study' ? '专注学习' : '专注备考'}时长{lastSessionTime}
