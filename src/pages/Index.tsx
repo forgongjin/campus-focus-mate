@@ -2,25 +2,21 @@ import React, { useState } from 'react';
 import { CountdownBanner } from '@/components/countdown-banner';
 import { StudyFocusCard } from '@/components/study-focus-card';
 import { useToast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 import campusBackground from '@/assets/campus-background.jpg';
 
 const Index = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [studyTime, setStudyTime] = useState("00:00:00");
   const [examTime, setExamTime] = useState("00:30:00");
 
   const handleStudyStart = () => {
-    toast({
-      title: "开始专注学习",
-      description: "祝你学习愉快！保持专注💪",
-    });
+    navigate('/focus/study');
   };
 
   const handleExamStart = () => {
-    toast({
-      title: "开始专注备考",
-      description: "距离考试更近一步！加油💪",
-    });
+    navigate('/focus/exam');
   };
 
   return (
